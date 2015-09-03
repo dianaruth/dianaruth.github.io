@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+}
+
+a:hover {
+    cursor:pointer;
+}
+
+.grey-section {
+    background-color: dimgrey;
+}
+
+.blue-section {
+    background-color: #80E6FF;
+}
+
+.heading {
+    font-family: bebas-neue, sans-serif;
+    font-size: 50px;
+}
+
+.skills {
+    background-color: #CCF5FF;
+}
+
+.project-header {
+    font-family: shadows-into-light-two, sans-serif;
+    font-size: 40px;
+}
+
+.project-picture {
+    margin: 10px;
+}
+
+.project-body {
+    margin: 20px;
+}
+
+.contact-text {
+    margin-top: 100px;
+    text-align: center;
+}
+
+#links {
+    margin-right: 20px;
+}
+
+#navigation {
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+}
+
+#intro {
+    padding-top: 70px;
+    background: #767676;
+}
+
+#projects {
+    padding-bottom: 20px;
+}
+
+#navbar-intro {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#svg {
+    position: absolute;
+}
+
+#name {
+    position: absolute;
+    z-index: 1;
+    font-size: 250px;
+    margin-left: 30px;
+    font-family: bebas-neue, sans-serif;
+}
+
+#description {
+    font-size: 35px;
+    font-family: shadows-into-light-two, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1;
+    margin-left: 40px;
+}
+
+.info {
+    background-color: #73CFE6;
+    color: dimgrey;
+    font-size: 20px;
+    font-family: droid-sans, sans-serif;
+    padding: 10px;
+}
+
+#contact-picture {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 25px;
+}
+
+#footer {
+    height: 200px;
+    background-color: dimgrey;
+}
+
+#footer-text {
+    padding-top: 20px;
+    font-size: 3em;
+    font-family: bebas-neue, sans-serif;
+}
+
+@media (max-width: 925px) {
+    #name {
+        font-size: 200px;
+    }
+    
+    #description {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 745px) {
+    #name {
+        font-size: 150px;
+    }
+    
+    #description {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 565px) {
+    #name {
+        font-size: 100px;
+    }
+    
+    #description {
+        font-size: 20px;
+    }
+}
