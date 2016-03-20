@@ -4,21 +4,10 @@ var delay = 0;
 var colors = ["#00FFCC", "#FFCCFF", "#99CCFF", "#CCFF99", "#6699FF"];
 
 $(document).ready(function() {
-    $("#intro").css("height", window.innerHeight);
-    $("#svg").css("height", window.innerHeight);
-    $("#svg").css("width", window.innerWidth);
+    $("#intro").css("height", $(window).height());
+    $("#svg").css("height", $(window).height());
+    $("#svg").css("width", $(window).width());
     animateRain();
-    $("#name").css("margin-top", ((window.innerWidth) / 20));
-    $("#description").css("margin-top", ((window.innerWidth) / 3.75));
-});
-
-$("#txequestrian").mouseout(function() {
-    $("#txequestrian").css("opacity", "1");
-});
-
-$(document).resize(function() {
-    $("#name").css("margin-top", ((window.innerWidth) / 20));
-    $("#description").css("margin-top", ((window.innerWidth) / 3.75));
 });
 
 $("#navbar-intro").click(function() {

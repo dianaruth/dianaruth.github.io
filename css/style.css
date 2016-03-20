@@ -22,6 +22,11 @@ a:hover {
     font-size: 50px;
 }
 
+.heading-small {
+    font-family: bebas-neue, sans-serif;
+    font-size: 40px;
+}
+
 .skills {
     background-color: #CCF5FF;
 }
@@ -57,6 +62,23 @@ a:hover {
     font-size: 20px;
     font-family: droid-sans, sans-serif;
     padding: 10px;
+}
+
+.small-project-info {
+    font-size: 20px;
+    font-family: droid-sans, sans-serif;
+    padding: 10px;
+}
+
+.small-project-link {
+    font-size: 20px;
+    font-family: droid-sans, sans-serif;
+    padding: 10px;
+    color: navy;
+}
+
+.small-project-info a {
+    color: navy;
 }
 
 .about-caption {
@@ -122,18 +144,20 @@ a:hover {
 #name {
     position: absolute;
     z-index: 1;
-    font-size: 250px;
-    margin-left: 30px;
+    font-size: 1800%;
+    margin-left: 3%;
     font-family: bebas-neue, sans-serif;
+    margin-top: 0.2em;
 }
 
 #description {
-    font-size: 35px;
+    font-size: 260%;
     font-family: shadows-into-light-two, sans-serif;
     font-weight: bold;
     position: absolute;
     z-index: 1;
-    margin-left: 40px;
+    margin-left: 4%;
+    margin-top: 9em;
 }
 
 #contact-picture {
@@ -153,32 +177,37 @@ a:hover {
     font-family: bebas-neue, sans-serif;
 }
 
-@media (max-width: 925px) {
+/* Media Queries */
+
+@media (max-width: 930px) {
     #name {
-        font-size: 200px;
+        font-size: 1400%;
+        margin-top: 0.3em;
     }
     
     #description {
-        font-size: 30px;
+        font-size: 180%;
+        margin-top: 12em;
     }
 }
 
-@media (max-width: 745px) {
+@media (max-width: 767px) {
     #name {
-        font-size: 150px;
+        font-size: 1000%;
+        margin-top: 0.4em;
     }
     
     #description {
-        font-size: 25px;
+        display: none;
+    }
+    
+    #about img, .about-caption, #projects, #contact img {
+        display: none;
     }
 }
 
 @media (max-width: 565px) {
     #name {
-        font-size: 100px;
-    }
-    
-    #description {
-        font-size: 20px;
+        word-wrap: break-word;
     }
 }
