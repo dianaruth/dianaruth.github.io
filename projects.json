@@ -1,0 +1,65 @@
+[
+    {
+        "id" : "txequestrian",
+        "name" : "Texas Equestrian Team Website",
+        "description" : "I built this website after I joined the Texas Equestrian Team and realized that the team was using a website made using a free online website builder. I saw this as an opportunity to improve my web development skills and help the team gain more publicity. The site is based on a free Bootstrap theme called 'Business Casual.' I consider this to be my first web project and completing this website helped further my passion for web design and development.",
+        "platform" : "Web",
+        "completion" : "September 2014",
+        "num_contributors" : 1,
+        "role" : "Front End Developer",
+        "thumb" : "txequestrian.png",
+        "images" : ["txequestrian_1.png", "txequestrian_2.png", "txequestrian_3.png"],
+        "source_link" : "https://github.com/txequestrian/txequestrian.github.io",
+        "link" : "http://www.txequestrian.com/"
+    },
+    {
+        "id" : "studybuddy",
+        "name" : "Study Buddy",
+        "description" : "This web application was built for a final project for my Software Engineering and Design Laboratory class. The app is meant to help students find tutors for their classes more easily. Tutors and students sign up separately and can be matched based on subject and price range compatibility. The web app uses Google App Engine and Java servlets.",
+        "platform" : "Web",
+        "completion" : "December 2015",
+        "num_contributors" : 5,
+        "role" : "Front End Developer",
+        "thumb" : "study_buddy.png",
+        "images" : ["study_buddy_1.png", "study_buddy_2.png"],
+        "source_link" : "https://github.com/dianaruth/studybuddy",
+        "link" : "http://study-buddy-1105.appspot.com/"
+    },
+    {
+        "id" : "mycloset",
+        "name" : "My Closet",
+        "description" : "This app was built as the final project for a class I took on iOS development. The app keeps an inventory of the clothing items in the user's closet and creates outfits based on criteria such as weather and how formal the outfit should be based on the user's preferences. The user can add new clothing items, save outfits, and share outfits on Facebook and Twitter.",
+        "platform" : "iOS",
+        "completion" : "December 2015",
+        "num_contributors" : 3,
+        "role" : "Head Developer",
+        "thumb" : "mycloset.png",
+        "images" : ["mycloset_1.png", "mycloset_2.png", "mycloset_3.png"],
+        "source_link" : "https://github.com/jeannettetang/iOS_MyCloset"
+    },
+    {
+        "id" : "sensemysoil",
+        "name" : "Sense My Soil",
+        "description" : "I created this PHP application as part of my senior design project. Our task, assigned by Texas Instruments, was to design a system to take soil readings and display them in a web application so farmers can see the status of their fields in real time. The soil readings were taken using a hardware system designed by our team and pushed to the database using a microcontroller. I created this web application that pulled raw soil readings from a database and displayed the most recent readings as well as graphs of the readings over time.",
+        "platform" : "Web",
+        "completion" : "April 2016",
+        "num_contributors" : 1,
+        "role" : "Full Stack Developer",
+        "thumb" : "sensemysoil.png",
+        "images" : ["sensemysoil_1.png", "sensemysoil_2.png", "sensemysoil_3.png"],
+        "source_link" : "https://github.com/dianaruth/sensemysoil"
+    },
+    {
+        "id" : "horsequiz",
+        "name" : "Horse Quiz",
+        "description" : "I made this simple quiz app to learn more about AngularJS. It asks the user a series of questions about horses and gives them feedback based on their answer. This was just a fun side project I completed to learn more about Angular, front end development and UI design.",
+        "platform" : "Web",
+        "completion" : "February 2016",
+        "num_contributors" : 1,
+        "role" : "Front End Developer",
+        "thumb" : "horse_quiz.png",
+        "images" : ["horse_quiz_1.png", "horse_quiz_2.png"],
+        "source_link" : "https://github.com/dianaruth/horse_quiz",
+        "link" : "http://www.dianaruth.me/horse_quiz/"
+    }
+]

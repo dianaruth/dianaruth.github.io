@@ -1,122 +1,100 @@
-var navbarHeight = 70;
-var idNum = 1;
-var delay = 0;
-var colors = ["#00FFCC", "#FFCCFF", "#99CCFF", "#CCFF99", "#6699FF"];
+/*jslint browser: true, indent: 2 */
+(function ($) {
+  'use strict';
+  $.fn.inviewport = function (options) {
+    var settings = $.extend({
+      'minPercentageInView' : 100,
+      'standardClassName': 'in-view'
+    }, options);
+    this.each(function () {
+      var $this = $(this),
+        $win = $(window),
+        changed = false,
+        isVisible = function () {
+          var c = settings.className || settings.standardClassName,
+            min = (settings.threshold || settings.minPercentageInView) / 100,
+            xMin = $this.width() * min,
+            yMin = $this.height() * min,
+            winPosX = $win.scrollLeft() + $win.width(),
+            winPosY = $win.scrollTop() + $win.height(),
+            elPosX = $this.offset().left + xMin,
+            elPosY = $this.offset().top + yMin;
+          if (winPosX > elPosX && winPosY > elPosY) {
+            $this.addClass(c);
+          }
+        };
+      $win.on('ready', isVisible())
+        .on('resize scroll', function () {
+          changed = true;
+        })
+      setInterval(function () {
+        if (changed) {
+          changed = false;
+          isVisible();
+        }
+      }, 250);
+    });
+  };
+}(jQuery));
 
-$(document).ready(function() {
-    $("#intro").css("height", $(window).height());
-    $("#svg").css("height", $(window).height());
-    $("#svg").css("width", $(window).width());
-    animateRain();
+$(window).load(function() {
+    // remove loading screen
+    $(".loader").fadeOut("slow");
+    // animate headers
+    $("#main-header").addClass("main-header-animated");
+    var subs = document.getElementsByClassName("title-sub");
+    for (var i = 0; i < subs.length; i++) {
+        subs[i].classList.add("title-sub-animated");
+        subs[i].classList.add("title-animated-" + (i + 1));
+    }
 });
 
-$("#navbar-intro").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#intro").offset().top - navbarHeight
-    }, 1000);
+// modals.js
+// created by Diana Ruth
+
+// for displaying project modals properly
+$(".modal-fullscreen").on('show.bs.modal', function () {
+    setTimeout( function() {
+        $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+    }, 0);
 });
+
+$(".modal-fullscreen").on('hidden.bs.modal', function () {
+    $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+});
+
+// Angular code for generating project links and modals
+(function() {
+
+    var app = angular.module('projects', []);
+
+    app.controller('ModalsController', ['$scope', '$http', function($scope, $http) {
+
+        $http.get('projects.json').then(function(projectData) {
+            $scope.projects = projectData.data;
+        });
+
+        $scope.openModal = function(id) {
+            $('#' + id).modal('show');
+        }
+    }]);
+
+})();
 
 $("#navbar-about").click(function() {
     $('html, body').animate({
-        scrollTop: $("#about").offset().top - navbarHeight
+        scrollTop: $("#about").offset().top - 50
     }, 1000);
-});;
+});
 
 $("#navbar-projects").click(function() {
     $('html, body').animate({
-        scrollTop: $("#projects").offset().top - navbarHeight
+        scrollTop: $("#projects").offset().top - 50
     }, 1000);
 });
 
 $("#navbar-contact").click(function() {
     $('html, body').animate({
-        scrollTop: $("#contact").offset().top - navbarHeight
+        scrollTop: $("#contact").offset().top - 50
     }, 1000);
 });
-
-function selectProject(projectId) {
-    $("#" + projectId).css("opacity", "0.8");
-    $("#" + projectId).css("cursor", "pointer");
-}
-
-function deselectProject(projectId) {
-    $("#" + projectId).css("opacity", "1");
-}
-
-$(window).scroll(function() {
-    if ($(window).scrollTop() >= $("#contact").offset().top - navbarHeight) {
-        var active = document.getElementsByClassName("active");
-        for (var i = 0; i < active.length; i++) {
-            active[i].classList.remove("active");
-        }
-        $("#navbar-contact").addClass("active");
-    }
-    else if ($(window).scrollTop() >= $("#projects").offset().top - navbarHeight) {
-        var active = document.getElementsByClassName("active");
-        for (var i = 0; i < active.length; i++) {
-            active[i].classList.remove("active");
-        }
-        $("#navbar-projects").addClass("active");
-    }
-    else if ($(window).scrollTop() >= $("#about").offset().top - navbarHeight) {
-        var active = document.getElementsByClassName("active");
-        for (var i = 0; i < active.length; i++) {
-            active[i].classList.remove("active");
-        }
-        $("#navbar-about").addClass("active");
-    }
-    else {
-        var active = document.getElementsByClassName("active");
-        for (var i = 0; i < active.length; i++) {
-            active[i].classList.remove("active");
-        }
-    }
-});
-
-function animateRain() {
-    var svgnode = document.createElementNS('http://www.w3.org/2000/svg','svg');
-    svgnode.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    svgnode.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
-    svgnode.setAttribute("height", (window.innerHeight - navbarHeight));
-    svgnode.setAttribute("width", window.innerWidth);
-    svgnode.setAttribute("id", "svg");
-    document.getElementById("intro").appendChild(svgnode);
-    for (var i = 0; i < 8; i++) {
-        setTimeout(function() { addCircle(); }, delay);
-        delay = delay + 1500;
-    }
-}
-
-function addCircle() {
-    var circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
-    if (idNum > 50) {
-        idNum = 1;
-    }
-    var circleId = "circle" + idNum;
-    idNum++;
-    var radius = getRandomNumber(20, 100);
-    var speed = getRandomNumber(4000, 15000);
-    var pos = getRandomNumber(radius, (window.innerWidth - radius));
-    var color = colors[getRandomNumber(0, colors.length)];
-    circle.setAttribute("id", circleId);
-    circle.setAttribute("cx", pos);
-    circle.setAttribute("cy", (radius * -1));
-    circle.setAttribute("r", radius);
-    circle.setAttribute("fill", color);
-    circle.setAttribute("onmouseover", "expand(this, " + radius + ");");
-    circle.setAttribute("onmouseout", "contract(this, " + radius + ");");
-    $("#svg").append(circle);
-    $("#" + circleId).velocity({ cy: (window.innerHeight - navbarHeight) + radius}, {duration: speed, easing: "linear", queue: false, complete: function()  {$("#" + circleId).remove(); addCircle();}});
-}
-
-function expand(elem, radius) {
-    $(elem).velocity({r:radius*1.2}, {duration: 400, easing: "linear", queue: false});
-}
-
-function contract(elem, radius) {
-    $(elem).velocity({r:radius}, {duration: 400, easing: "linear", queue: false});
-}
-
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}

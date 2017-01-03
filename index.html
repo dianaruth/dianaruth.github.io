@@ -1,299 +1,99 @@
 <!DOCTYPE html>
-<html>
     <head>
         <title>Diana Ruth</title>
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <script src="http://use.edgefonts.net/shadows-into-light-two;bebas-neue;droid-sans.js"></script>
-        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="js/velocity.js"></script>
-        <script src="js/jquery-ui.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-            $(window).load(function() {
-	           $(".loader").fadeOut("slow");
-            })
-        </script>
+        <script src="https://use.typekit.net/ogu5oxf.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
-    <body>
-        <div class="loader"></div>
-        <nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <body data-spy="scroll" data-target=".navbar" data-offset="50" ng-app="projects">
+        <div class="loader flex-container">
+            <img class="loader-spin" src="images/loader.svg" alt="Loading...">
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="navbar-intro" class="navbar-brand">dianaruth</a>
+                    <a class="navbar-brand" href="/">dianaruth</a>
                 </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul id="links" class="nav navbar-nav navbar-right">
-                        <li id="navbar-about"><a>About</a></li>
-                        <li id="navbar-projects"><a>Projects</a></li>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="navbar-about"><a href="#about">About</a></li>
+                        <li id="navbar-projects"><a href="#projects">Projects</a></li>
                         <li><a href="/blog">Blog</a></li>
-                        <li id="navbar-contact"><a>Contact</a></li>
+                        <li id="navbar-contact"><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <section id="intro">
-            <p id="name">Diana Ruth</p>
-            <p id="description">Software Engineering Student, Aspiring Web Developer, Texas Longhorn</p>
+        <section id="title">
+            <h1 id="main-header">Diana Ruth</h1>
+            <h2 class="title-sub">Software Engineering Student</h2>
+            <h2 class="title-sub">Aspiring Web Developer</h2>
+            <h2 class="title-sub">Texas Longhorn</h2>
         </section>
-        <section id="about" class="blue-section">
-            <div class="container">
-                <div class="row">
-                    <h1 class="heading">About Me</h1>
+        <section id="about">
+            <div class="container flex-container-col">
+                <h1 class="section-header">About Me</h1>
+                <div class="row about-container">
+                    <img src="images/horse.jpg" alt="Deacon and I" id="about-img-one" class="about-img">
+                    <p class="about-text">
+                        Hello! My name is Diana Ruth and I'm a fifth year student at The University of Texas at Austin. I am a double major in Electrical Engineering and Computer Science graduating in May 2017. I love everything about my majors and I'm incredibly excited to make the move to full-time work this summer. During my time at UT, I was a member of Theta Tau, a national co-ed professional engineering fraternity, and I was the president of the Texas Equestrian Team. In my free time, you can find me knitting, biking, cooking, or spending time at the barn.
+                    </p>
+                    <img src="images/mountain.jpg" alt="Guadalupe Peak" id="about-img-two" class="about-img">
+                    <p class="about-text">
+                        Since I'm studying both electrical engineering and computer science, I've been exposed to a large variety of concepts that has provided me with a well-rounded understanding of software engineering. I've taken classes on circuits, logic design, operating systems and more, but my true passion lies in web design and development. I love learning new languages and frameworks in my spare time to further develop my software development skills, and I'm hoping to pursue a career that allows me use the newest technologies to solve all types of problems.
+                    </p>
                 </div>
-                <div class="row">
-                    <div class="col-sm-offset-1 col-sm-3">
-                        <img id="horse" src="img/horse.jpg" width="100%">
-                        <label class="about-caption">Hanging out with Deacon at the barn</label>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="info">Hello! My name is Diana Ruth and I'm a fourth year student at The University of Texas at Austin. I am a double major in Electrical Engineering and Computer Science set to graduate in May of 2017 and I'm absolutely loving it. I'm a member of Theta Tau, a national co-ed professional engineering fraternity, and I'm the president of the Texas Equestrian Team. In my free time, you can find me running, biking, cooking, or spending time at the barn.</p>
-                    </div>
+            </div>
+        </section>
+        <section id="projects" ng-controller="ModalsController">
+            <div class="row">
+                <h1 class="section-header">Projects</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb" ng-repeat="project in projects" ng-click="openModal(project.id);">
+                    <img class="img-responsive" src="images/thumbs/{{project.thumb}}" alt="">
                 </div>
-                <div class="row" style="margin-top: 30px;">
-                    <div class="col-sm-offset-1 col-sm-6">
-                        <p class="info">Since I'm studying both electrical engineering and computer science, I've been exposed to a large variety of concepts that has provided me with a well-rounded understanding of software engineering. I've taken classes on circuits, logic design, operating systems and more, but nothing gets me as excited as web development does. I have an intense passion for designing and implementing web sites and I would love to work with web and mobile development when I graduate. I love learning new languages and frameworks in my spare time to further develop my software development skills. Click <a href="resources/resume.pdf" target="_blank">here</a> to view my resume.</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <img id="mountain" src="img/mountain.jpg" width="100%">
-                        <label class="about-caption">On top of Guadalupe Peak, the highest point in Texas</label>
-                    </div>
-                </div>
-                <hr style="border-width: 6px;">
-                <div class="row">
-                    <h1 class="heading">Skills</h1>
-                </div>
-                <div class="row col-sm-offset-1 col-sm-9">
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="general-heading">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#general" aria-expanded="true" aria-controls="general">
-                                        General
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="general" class="panel-collapse collapse" role="tabpanel" aria-labelledby="general">
-                                <div class="panel-body">
-                                    Java
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                                            Proficient (90%)
-                                        </div>
-                                    </div>
-                                    C/C++
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                            Proficient (80%)
-                                        </div>
-                                    </div>
-                                    Visual Basic
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                            Proficient (80%)
-                                        </div>
-                                    </div>
-                                    Python
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                            Proficient (80%)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            </div>
+
+            <div class="modal modal-fullscreen fade" id="{{project.id}}" tabindex="-1" role="dialog" aria-hidden="true" ng-repeat="project in projects">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close close-btn" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+                            <h1 class="modal-title">{{project.name}}</h1>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="frontend-heading">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#frontend" aria-expanded="true" aria-controls="frontend">
-                                        Front End
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="frontend" class="panel-collapse collapse" role="tabpanel" aria-labelledby="frontend">
-                                <div class="panel-body">
-                                    HTML
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                                            Proficient (90%)
-                                        </div>
-                                    </div>
-                                    CSS
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                                            Proficient (90%)
-                                        </div>
-                                    </div>
-                                    JavaScript
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                            Proficient (80%)
-                                        </div>
-                                    </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <h5>Platform</h5>
+                                    <h6>{{project.platform}}</h6>
+                                    <h5>Completion Date</h5>
+                                    <h6>{{project.completion}}</h6>
+                                    <h5>Number of Contributors</h5>
+                                    <h6>{{project.num_contributors}}</h6>
+                                    <h5>Role</h5>
+                                    <h6>{{project.role}}</h6>
+                                    <h5>Description</h5>
+                                    <h6>{{project.description}}</h6>
+                                    <h5>Source Code</h5>
+                                    <a href="{{project.source_link}}" target="_blank">{{project.source_link}}</a>
+                                    <br>
+                                    <br>
+                                    <h5><a href="{{project.link}}" target="_blank" ng-if="project.link">Click to View Project</a></h5>
+                                    <br>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="backend-heading">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#backend" aria-expanded="true" aria-controls="backend">
-                                        Back End
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="backend" class="panel-collapse collapse" role="tabpanel" aria-labelledby="backend">
-                                <div class="panel-body">
-                                    PHP
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                            Proficient (80%)
-                                        </div>
-                                    </div>
-                                    SQL
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                            Proficient (80%)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="mobile-heading">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#mobile" aria-expanded="true" aria-controls="mobile">
-                                        Mobile
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="mobile" class="panel-collapse collapse" role="tabpanel" aria-labelledby="mobile">
-                                <div class="panel-body">
-                                    Swift
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                            Proficient (80%)
-                                        </div>
-                                    </div>
-                                    Android Development
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
-                                            Beginner (20%)
-                                        </div>
-                                    </div>
-                                    Objective-C
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
-                                            Beginner (20%)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="game-heading">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#game" aria-expanded="true" aria-controls="game">
-                                        Game Development
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="game" class="panel-collapse collapse" role="tabpanel" aria-labelledby="game">
-                                <div class="panel-body">
-                                    Unity
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
-                                            Beginner (20%)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="frameworks-heading">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#frameworks" aria-expanded="true" aria-controls="frameworks">
-                                        Frameworks/Libraries
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="frameworks" class="panel-collapse collapse" role="tabpanel" aria-labelledby="frameworks">
-                                <div class="panel-body">
-                                    jQuery
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                            Proficient (80%)
-                                        </div>
-                                    </div>
-                                    Bootstrap
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                            Familiar (70%)
-                                        </div>
-                                    </div>
-                                    WordPress
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                            Familiar (70%)
-                                        </div>
-                                    </div>
-                                    AngularJS
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                            Familiar (50%)
-                                        </div>
-                                    </div>
-                                    Flask
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                            Familiar (50%)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="other-heading">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#other" aria-expanded="true" aria-controls="other">
-                                        Other
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="other" class="panel-collapse collapse" role="tabpanel" aria-labelledby="other">
-                                <div class="panel-body">
-                                    Assembly Language
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                            Proficient (80%)
-                                        </div>
-                                    </div>
-                                    Git
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                            Proficient (80%)
-                                        </div>
-                                    </div>
-                                    Unix/Linux
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                            Familiar (70%)
-                                        </div>
-                                    </div>
-                                    Adobe Illustrator
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                            Familiar (50%)
-                                        </div>
-                                    </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <img src="images/{{photo}}" ng-repeat="photo in project.images">
                                 </div>
                             </div>
                         </div>
@@ -301,331 +101,44 @@
                 </div>
             </div>
         </section>
-        <section id="projects" class="grey-section">
+        <section id="contact">
             <div class="container">
                 <div class="row">
-                    <h1 class="heading">Projects</h1>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <img onmouseover="selectProject('txequestrian');" onmouseout="deselectProject('txequestrian');" id="txequestrian" data-toggle="modal" data-target="#txequestrian-modal" src="img/txequestrian/txequestrian.png" width="100%">
-                    </div>
-                    <div class="col-sm-3">
-                        <img onmouseover="selectProject('crococonut');" onmouseout="deselectProject('crococonut');" id="crococonut" data-toggle="modal" data-target="#crococonut-modal" src="img/crococonut/crococonut.png" width="100%">
-                    </div>
-                    <div class="col-sm-3">
-                        <img onmouseover="selectProject('cs373blog');" onmouseout="deselectProject('cs373blog');" id="cs373blog" data-toggle="modal" data-target="#cs373blog-modal" src="img/cs373blog/blog_home.png" width="100%">
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 30px;">
-                    <div class="col-sm-3">
-                        <img onmouseover="selectProject('nightmares');" onmouseout="deselectProject('nightmares');" id="nightmares" data-toggle="modal" data-target="#nightmares-modal" src="img/nightmares/nightmares_with_enemies.png" width="100%">
-                    </div>
-                    <div class="col-sm-3">
-                        <img onmouseover="selectProject('appengineblog');" onmouseout="deselectProject('appengineblog');" id="appengineblog" data-toggle="modal" data-target="#appengineblog-modal" src="img/appengineblog/appengineblog.png" width="100%">
-                    </div>
-                    <div class="col-sm-6">
-                        <img onmouseover="selectProject('studybuddy');" onmouseout="deselectProject('studybuddy');" id="studybuddy" data-toggle="modal" data-target="#studybuddy-modal" src="img/studybuddy/landingpage.png" width="100%">
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 30px;">
-                    <div class="col-sm-2">
-                        <img onmouseover="selectProject('mycloset');" onmouseout="deselectProject('mycloset');" id="mycloset" data-toggle="modal" data-target="#mycloset-modal" src="img/mycloset/menu.png" width="100%">
-                    </div>
-                </div>
-                <br>
-                <hr style="border-width: 4px;">
-                <div class="row">
-                    <h1 class="heading-small">Smaller Projects</h1>
-                    <p class="small-project-info">These are some small projects that I've done on the side, just for fun:</p>
-                    <ul>
-                        <li><a class="small-project-link" href="http://www.dianaruth.me/horse_quiz" target="_blank">Interactive Horse Quiz</a></li>
-                        <li><a class="small-project-link" href="http://www.dianaruth.me/meme_generator" target="_blank">Meme Generator</a></li>
-                    </ul>
-                    <p class="small-project-info">You can find the source code for these projects on my <a href="http://www.github.com/dianaruth" target="_blank">GitHub account.</a></p>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="blue-section">
-            <div class="container">
-                <div class="row">
-                    <h1 class="heading">Contact</h1>
-                </div>
-                <div class="row" style="margin-bottom: 60px; margin-top: 60px;">
-                    <div class="col-sm-3">
-                        <img src="img/cmmhorse.png" width="100%">
-                    </div>
-                    <div class="col-sm-9">
-                        <h3 class="contact-text">To get in touch with me, please send me an email at <a href="mailto:hello@dianaruth.me">hello@dianaruth.me</a></h3>
+                    <div class="col-lg-12">
+                        <div id="contact-form">
+                            <h1 class="section-header">Give Me a Shout!</h1>
+                            <form method="POST" action="http://formspree.io/hello@dianaruth.me">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="name" placeholder="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Your email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" class="form-control" placeholder="Your message"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Send</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <footer id="footer" class="text-center">
-            <div class="container">
-                <div class="row">
-                    <p id="footer-text">Find me on the web</p>
-                    <ul class="list-inline">
-                        <li>
-                            <a class="btn btn-facebook" href="https://www.facebook.com/diana.ruth.16" target="_blank">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a class="btn btn-linkedin" href="https://www.linkedin.com/pub/diana-ruth/81/a39/bab" target="_blank">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                            <a class="btn btn-github" href="https://github.com/dianaruth" target="_blank">
-                                <i class="fa fa-github"></i>
-                            </a>
-                            <a class="btn btn-youtube" href="https://www.youtube.com/channel/UCDv_zt5mQC0mGGY-8wS9YxA" target="_blank">
-                                <i class="fa fa-youtube"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <p style="padding-top: 30px;">Copyright 2015-2016 Diana Ruth</p>
-                </div>
+        <footer>
+            <h2>&copy; 2016-2017 Diana Ruth</h2>
+            <div class="footer-flex-container">
+                <a href="https://www.facebook.com/diana.ruth.16"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
+                <a href="https://github.com/dianaruth"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+                <a href="https://www.youtube.com/channel/UCDv_zt5mQC0mGGY-8wS9YxA"><i class="fa fa-youtube fa-3x" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/diana-ruth-baba3981"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a>
+                <a href="mailto:hello@dianaruth.me"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i></a>
             </div>
         </footer>
-        <div id="txequestrian-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header" style="border:none;">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <p class="project-header">Texas Equestrian Team Website</p>
-                    </div>
-                    <div class="modal-body">
-                        <h3 style="word-wrap: break-word; margin-left: 20px;"><a href="http://www.txequestrian.com" target="_blank">www.txequestrian.com</a></h3>
-                        <div class="well project-body">
-                            <p>This was my first major web project, which I built during the summer of 2014 and published in August 2014. It's built based on a Bootstrap theme called "Business Casual." This website provides information about the Texas Equestrian Team and includes a contact page and a third-party jQuery photo gallery. The website is hosted on GitHub Pages and the source code can be viewed on GitHub <a href="https://github.com/txequestrian/txequestrian.github.io" target="_blank">here</a>.</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-offset-1 col-sm-10 col-sm-offset-1">
-                                <img class="project-picture project-bordered" src="img/txequestrian/txequestrianmembers.png">
-                                <label class="project-caption">A cutout of the members page</label>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-offset-1 col-sm-10 col-sm-offset-1">
-                                <img class="project-picture project-bordered" src="img/txequestrian/txequestrianphotos.png">
-                                <label class="project-caption">The photo gallery was built from a jQuery photo gallery template</label>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-offset-1 col-sm-10 col-sm-offset-1">
-                                <img class="project-picture project-bordered" src="img/txequestrian/txequestriancontact.png">
-                                <label class="project-caption">The contact page includes a Formspree HTML form</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="crococonut-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header" style="border:none;">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <p class="project-header">Crococonut</p>
-                    </div>
-                    <div class="modal-body">
-                        <div class="well project-body">
-                            <p>I created this game during my sophomore year of college after learning about Java Applets. Back then, applets were still widely supported by all major browsers, although today that has changed. The game features a crocodile that's hungry for coconuts, and the player needs to get as many coconuts as possible without hitting any bombs. The game keeps track of the score, displays instructions, and allows the user to play again after they lose. I have chosen to display the game as a video below rather than embedding the applet due to the security constraints that modern browsers have on applets. View the source code on GitHub <a href="https://github.com/dianaruth/crococonut" target="_blank">here</a>.</p>
-                        </div>
-                        <iframe width="100%" height="500" src="https://www.youtube.com/embed/R74oMZeHs9k" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="cs373blog-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header" style="border:none;">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <p class="project-header">Blog for CS373: Software Engineering</p>
-                    </div>
-                    <div class="modal-body">
-                        <h3 style="word-wrap: break-word; margin-left: 20px;"><a href="http://www.dianaruth.me/cs373-blog" target="_blank">www.dianaruth.me/cs373-blog</a></h3>
-                        <div class="well project-body">
-                            <p>I created this web blog as an extra credit project for CS373: Software Engineering. The purpose of the blog was to create an entry each week detailing my thoughts about the class as I learned technologies like Python, Flask, Bootstrap, JavaScript, unit testing, Git, and many others. The blog is hosted on GitHub Pages and powered by Jekyll. View the source code on GitHub <a href="https://github.com/dianaruth/cs373-blog" target="_blank">here</a>.</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-offset-2 col-sm-8 col-sm-offset-2">
-                                <img class="project-picture project-bordered" src="img/cs373blog/blog_post.png">
-                                <label class="project-caption">An example of a post on the blog.</label>
-                            </div>
-                            <div class="col-sm-offset-2 col-sm-8 col-sm-offset-2">
-                                <img class="project-picture project-bordered" src="img/cs373blog/contact.png">
-                                <label class="project-caption">The contact page includes social media links.</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="nightmares-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header" style="border:none;">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <p class="project-header">Unity3D Survival Shooter Game</p>
-                    </div>
-                    <div class="modal-body">
-                        <h3 style="word-wrap: break-word; margin-left: 20px;"><a href="resources/nightmares.html" target="_blank">Click Here to Play the Game</a></h3>
-                        <h6 style="word-wrap: break-word; margin-left: 20px; color: red;">(Firefox Recommended)</h4>
-                        <h5 style="word-wrap: break-word; margin-left: 20px;">Use the WASD keys to move the player.</h5>
-                        <h5 style="word-wrap: break-word; margin-left: 20px;">Move the mouse to aim the gun and click the mouse to shoot.</h5>
-                        <h5 style="word-wrap: break-word; margin-left: 20px;">Press the ESC key to pause the game and view the menu.</h5>
-                        <div class="well project-body">
-                            <p>I've done a little bit of dabbling in Unity out of pure interest in developing video games. I've always found video games to be incredibly interesting because of their sheer complexity, and in making this game I found out how intricate all the parts of a video game truly are. I created this game while following a tutorial on the Unity website (the tutorial can be found <a href="http://unity3d.com/learn/tutorials/projects/survival-shooter-project" target="_blank">here</a>). I learned so much about the intricate process of creating video games and I'm looking forward to doing some more game development in the near future.</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-5 col-sm-offset-1">
-                                <img class="project-picture project-bordered" src="img/nightmares/nightmares_with_enemies.png">
-                                <label class="project-caption">The player surrounded by enemies</label>
-                            </div>
-                            <div class="col-sm-5">
-                                <img class="project-picture project-bordered" src="img/nightmares/nightmares_pause_menu.png">
-                                <label class="project-caption">A screenshot of the game menu</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-5 col-sm-offset-1">
-                                <img class="project-picture project-bordered" src="img/nightmares/nightmares_generic.png">
-                                <label class="project-caption">A view of the entire game interface</label>
-                            </div>
-                            <div class="col-sm-5">
-                                <img class="project-picture project-bordered" src="img/nightmares/nightmares_game_over.png">
-                                <label class="project-caption">The "Game Over" screen</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="appengineblog-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header" style="border:none;">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <p class="project-header">Google App Engine Blog</p>
-                    </div>
-                    <div class="modal-body">
-                        <h3 style="word-wrap: break-word; margin-left: 20px;"><a href="http://1-dot-eng-carport-107918.appspot.com/blog.jsp" target="_blank">http://1-dot-eng-carport-107918.appspot.com/blog.jsp</a></h3>
-                        <div class="well project-body">
-                            <p>This project was completed as a project for my Software Engineering and Design Lab class. It's a blog that makes use of the Google App Engine functionality to store post data. Some of the main features are:</p>
-                                <ul>
-                                    <li>a Bootstrap free theme front-end</li>
-                                    <li>Google login functionality (only logged in users can create new posts)</li>
-                                    <li>the Objectify library to simplify the Google App Engine datastore</li>
-                                    <li>a cron job that sends a daily email digest of new posts to subscribed users</li>
-                                </ul>
-                            <p>View the source code on GitHub <a href="https://github.com/dianaruth/ee461l_blog" target="_blank">here</a>. And feel free to add some new posts!</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-offset-1 col-sm-10 col-sm-offset-1">
-                                <img class="project-picture project-bordered" src="img/appengineblog/blogsignedin.png">
-                                <label class="project-caption">The blog homepage once a user has signed in</label>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-offset-1 col-sm-10 col-sm-offset-1">
-                                <img class="project-picture project-bordered" src="img/appengineblog/blogposts.png">
-                                <label class="project-caption">This page displays all of the posts added to the blog by all users</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="studybuddy-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header" style="border:none;">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <p class="project-header">Study Buddy</p>
-                    </div>
-                    <div class="modal-body">
-                        <h3 style="word-wrap: break-word; margin-left: 20px;"><a href="http://study-buddy-1105.appspot.com" target="_blank">http://study-buddy-1105.appspot.com</a></h3>
-                        <div class="well project-body">
-                            <p>This was the major project my group completed for EE461L: Software Engineering and Design Lab. The motivation behind Study Buddy is addressing the need for course-specific tutoring among university students. Finding a tutor for a specific subject can be a tedious process, and tutors might not be experienced in the particular subject areas that the specific course requires. Students are only able to see the tutors that offer the specific coursework they require tutoring in, and are able to browse the prices and choose the right tutor for them. This effectively streamlines the process of pairing the tutor and student by eliminating the need for back and forth communication with questions about the service and price. Once paired, the student and tutor need only coordinate to schedule a time and place to meet for the tutoring.</p>
-                            <p>View the source code on GitHub <a href="https://github.com/dianaruth/studybuddy" target="_blank">here</a>.</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-offset-1 col-sm-10 col-sm-offset-1">
-                                <img class="project-picture project-bordered" src="img/studybuddy/studentdashboard.png">
-                                <label class="project-caption">The student dashboard displays tutors that match the student's subjects and the student can skip or subscribe to each tutor</label>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-offset-1 col-sm-10 col-sm-offset-1">
-                                <img class="project-picture project-bordered" src="img/studybuddy/tutordashboard.png">
-                                <label class="project-caption">The tutor dashboard allows the tutor to change their hourly rate, and once the rate has been changed an email update will be sent to each of their subscribed students</label>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-offset-1 col-sm-10 col-sm-offset-1">
-                                <img class="project-picture project-bordered" src="img/studybuddy/changeinfo.png">
-                                <label class="project-caption">Both students and tutors can update their account information on the Settings page</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="mycloset-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header" style="border:none;">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <p class="project-header">My Closet</p>
-                    </div>
-                    <div class="modal-body">
-                        <div class="well project-body">
-                            <p>My Closet is an iOS application that my group created as our final project for CS378: iOS Mobile Computing. The app is used to create an electronic version of your closet. Users can enter information about every item in their closet (shirts, pants, shoes, accessories, etc.) and provide information about it such as color, material, and size. The app will keep a list of all clothing items the user owns. The user will be able to add, edit, and delete items in their virtual closet.</p>
-                            <p>Using the items that the user has entered about their closet, the app will then be able to combine pieces to create an outfit for the user to wear. The user can input how formal they want the outfit to be, what mood they're in, or manually enter colors or materials. The app will then be able to connect to the weather app on the iPhone and check what the weather will be like that day and generate a suggested custom outfit based on the user's preferences. The app will also be connected to social media so that the user can share their custom made outfit online with friends and family.</p>
-                            <p>Note: Screenshots were taken on an iPhone 5.</p>
-                            <p>View the source code on GitHub <a href="https://github.com/jeannettetang/iOS_MyCloset" target="_blank">here</a>.</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <img class="project-picture" src="img/mycloset/categories.png">
-                                <label class="project-caption">Clothing items are sorted by category</label>
-                            </div>
-                            <div class="col-sm-3">
-                                <img class="project-picture" src="img/mycloset/shirts.png">
-                                <label class="project-caption">Users can search within each category for a specific item</label>
-                            </div>
-                            <div class="col-sm-3">
-                                <img class="project-picture" src="img/mycloset/additem.png">
-                                <label class="project-caption">The interface for adding a new item</label>
-                            </div>
-                            <div class="col-sm-3">
-                                <img class="project-picture" src="img/mycloset/viewitem.png">
-                                <label class="project-caption">The user can view information about each item in their closet</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-offset-1 col-sm-3">
-                                <img class="project-picture" src="img/mycloset/createoutfit.png">
-                                <label class="project-caption">The interface for creating an outfit</label>
-                            </div>
-                            <div class="col-sm-3">
-                                <img class="project-picture" src="img/mycloset/newoutfit.png">
-                                <label class="project-caption">The user can save their new outfit so they can see it again later</label>
-                            </div>
-                            <div class="col-sm-3">
-                                <img class="project-picture" src="img/mycloset/shareoutfit.png">
-                                <label class="project-caption">The user can take a picture of themself wearing an outfit and share it on Facebook or Twitter</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>
