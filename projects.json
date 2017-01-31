@@ -61,5 +61,17 @@
         "images" : ["horse_quiz_1.png", "horse_quiz_2.png"],
         "source_link" : "https://github.com/dianaruth/horse_quiz",
         "link" : "http://www.dianaruth.me/horse_quiz/"
+    },
+    {
+        "id" : "swewars",
+        "name" : "Return of the API",
+        "description" : "This project was created as part of my Software Engineering course during the Spring semester of 2016. It focused on full stack web development to build an IMDB-style database for a topic of our choosing. We made an application about people, planets and species in the Star Wars universe using data scraped from an online Star Wars data repository called 'The Star Wars API', located at www.swapi.co, as well as images and descriptions from Wikia. This application uses AngularJS, Flask, Docker, and PostgreSQL. Unfortunately the application is no longer running because it was hosted on a Rackspace server that we no longer pay for, but the source code is all available on my GitHub page. My responsibilities for this project included the UI design and implementation and the front end AngularJS logic.",
+        "platform" : "Web",
+        "completion" : "May 2016",
+        "num_contributors" : 5,
+        "role" : "Front End Developer",
+        "thumb" : "swewars.png",
+        "images" : ["swewars_intro.png", "swewars_home.png", "swewars_people.png", "swewars_person.png"],
+        "source_link" : "https://github.com/dianaruth/cs373-idb"
     }
 ]
