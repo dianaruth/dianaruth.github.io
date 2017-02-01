@@ -1,41 +1,33 @@
-/*jslint browser: true, indent: 2 */
-(function ($) {
-  'use strict';
-  $.fn.inviewport = function (options) {
-    var settings = $.extend({
-      'minPercentageInView' : 100,
-      'standardClassName': 'in-view'
-    }, options);
-    this.each(function () {
-      var $this = $(this),
-        $win = $(window),
-        changed = false,
-        isVisible = function () {
-          var c = settings.className || settings.standardClassName,
-            min = (settings.threshold || settings.minPercentageInView) / 100,
-            xMin = $this.width() * min,
-            yMin = $this.height() * min,
-            winPosX = $win.scrollLeft() + $win.width(),
-            winPosY = $win.scrollTop() + $win.height(),
-            elPosX = $this.offset().left + xMin,
-            elPosY = $this.offset().top + yMin;
-          if (winPosX > elPosX && winPosY > elPosY) {
-            $this.addClass(c);
-          }
-        };
-      $win.on('ready', isVisible())
-        .on('resize scroll', function () {
-          changed = true;
-        })
-      setInterval(function () {
-        if (changed) {
-          changed = false;
-          isVisible();
+// Angular code for generating project links and modals
+(function() {
+
+    var app = angular.module('projects', []);
+    app.directive('myDirective', function () {});
+
+    app.controller('ModalsController', ['$scope', '$http', function($scope, $http) {
+
+        $http.get('projects.json').then(function(projectData) {
+            $scope.projects = projectData.data;
+        });
+
+        $scope.openModal = function(id) {
+            $('#' + id).modal('show');
         }
-      }, 250);
-    });
-  };
-}(jQuery));
+
+        $scope.showTitle = function(elem) {
+            var text = elem.nextElementSibling;
+            $(elem).addClass("hovering");
+            $(text).css("display", "block");
+        }
+
+        $scope.removeTitle = function(elem) {
+            var text = elem.nextElementSibling;
+            $(elem).removeClass("hovering");
+            $(text).css("display", "none");
+        }
+    }]);
+
+})();
 
 $(window).load(function() {
     // remove loading screen
@@ -49,9 +41,6 @@ $(window).load(function() {
     }
 });
 
-// modals.js
-// created by Diana Ruth
-
 // for displaying project modals properly
 $(".modal-fullscreen").on('show.bs.modal', function () {
     setTimeout( function() {
@@ -62,24 +51,6 @@ $(".modal-fullscreen").on('show.bs.modal', function () {
 $(".modal-fullscreen").on('hidden.bs.modal', function () {
     $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
 });
-
-// Angular code for generating project links and modals
-(function() {
-
-    var app = angular.module('projects', []);
-
-    app.controller('ModalsController', ['$scope', '$http', function($scope, $http) {
-
-        $http.get('projects.json').then(function(projectData) {
-            $scope.projects = projectData.data;
-        });
-
-        $scope.openModal = function(id) {
-            $('#' + id).modal('show');
-        }
-    }]);
-
-})();
 
 $("#navbar-about").click(function() {
     $('html, body').animate({
@@ -97,4 +68,8 @@ $("#navbar-contact").click(function() {
     $('html, body').animate({
         scrollTop: $("#contact").offset().top - 50
     }, 1000);
+});
+
+$( "img" ).on( "hover", function() {
+  console.log("yes");
 });

@@ -297,11 +297,25 @@ body {
 #projects .thumb {
   padding: 0px;
   margin: 0px;
-  color: #99e6ff;
+  color: #393E46;
+  background: #99e6ff;
 }
-#projects .thumb :hover {
-  opacity: 0.7;
+#projects .thumb .hovering {
+  opacity: 0.2;
   cursor: pointer;
+}
+#projects .thumb h2 {
+  pointer-events: none;
+  position: absolute;
+  top: 130px;
+  display: none;
+  font-family: rucksack, Helvetica, sans-serif;
+  font-weight: bolder;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#projects .thumb .project-img {
+  position: relative;
 }
 #projects .section-header {
   color: #99e6ff;
