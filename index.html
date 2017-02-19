@@ -100,7 +100,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb" ng-repeat="project in projects" ng-click="openModal(project.id);" ng-mouseover="showTitle($event.target);" ng-mouseout="removeTitle($event.target);">
-                    <img class="img-responsive project-img" src="images/thumbs/{{project.thumb}}" alt="">
+                    <img class="img-responsive project-img" ng-src="images/thumbs/{{project.thumb}}" alt="">
                     <h2>{{project.name}}</h2>
                 </div>
             </div>
@@ -133,7 +133,7 @@
                                     <br>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <img src="images/{{photo}}" ng-repeat="photo in project.images">
+                                    <img ng-src="images/{{photo}}" ng-repeat="photo in project.images">
                                 </div>
                             </div>
                         </div>
