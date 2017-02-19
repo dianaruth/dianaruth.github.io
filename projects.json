@@ -73,5 +73,17 @@
         "thumb" : "swewars.png",
         "images" : ["swewars_intro.png", "swewars_home.png", "swewars_people.png", "swewars_person.png"],
         "source_link" : "https://github.com/dianaruth/cs373-idb"
+    },
+    {
+        "id" : "yumdb",
+        "name" : "YumDB",
+        "description" : "This is one of my favorite projects because it's something I've done just for fun. I love to cook so I wanted a way to be able to find recipes based on only the ingredients I had in my kitchen, so I could avoid a trip to the grocery store. I decided to make this web app to practice my front-end development with AngularJS as well as my web design skills. I designed the entire UI and created the graphics using Adobe Illustrator. The app uses the Yummly API for recipe search and then displays the results all on a single page application. This project is still a work in progress, but the landing page and the search input are complete. One of my favorite features is the autocomplete select lists for the ingredients, where the user can type in the name of an ingredient and a list of matching ingredients will appear for the user to select. The ingredients then appear as a breadcrumb below the input box and can be removed by clicking on the 'X'. I've loved working on this project and hope to finish it by the end of summer 2017.",
+        "platform" : "Web",
+        "completion" : "TBD",
+        "num_contributors" : 1,
+        "role" : "Front End Developer",
+        "thumb" : "yumdb.png",
+        "images" : ["yumdb_1.png", "yumdb_2.png", "yumdb_3.png"],
+        "source_link" : "https://github.com/dianaruth/yumdb"
     }
 ]
